@@ -8,9 +8,8 @@ from app.database import models
 
 def generate_assessment_pdf(prediction: models.Prediction, user: models.User) -> io.BytesIO:
     """
-    Generates a clinical-grade diagnostic assessment report containing patient biometrics,
-    logged symptom indicators, AI-assisted primary conditions, matching confidence scores,
-    and a structured care pathway.
+    Generates an educational summary of a saved rule-based assessment. It is not a
+    clinical report, diagnosis, prescription, or treatment plan.
     """
     buffer = io.BytesIO()
     
@@ -102,8 +101,8 @@ def generate_assessment_pdf(prediction: models.Prediction, user: models.User) ->
     
     # 3. Add Content Elements
     # Header Title & Subtitle
-    story.append(Paragraph("MedAssist Clinical Intelligence Report", header_style))
-    story.append(Paragraph("AI-ASSISTED TRIAGE & DIAGNOSTIC DECISION SUPPORT SYSTEM", subheader_style))
+    story.append(Paragraph("MedAssist Educational Assessment Summary", header_style))
+    story.append(Paragraph("RULE-BASED SYMPTOM PATTERN MATCHING — NOT A MEDICAL DIAGNOSIS", subheader_style))
     story.append(Spacer(1, 5))
     
     # Patient Demographics & Biometrics Table
@@ -142,17 +141,17 @@ def generate_assessment_pdf(prediction: models.Prediction, user: models.User) ->
     story.append(Spacer(1, 10))
     
     # Logged Clinical Indicators
-    story.append(Paragraph("Symptomatic & Clinical Profile", section_heading))
+    story.append(Paragraph("Reported Symptoms and Context", section_heading))
     story.append(Paragraph(f"The patient reported the following clinical indicators: <b>{prediction.symptoms_summary}</b>", body_style))
     story.append(Spacer(1, 8))
     
     # Diagnostic Predictions
-    story.append(Paragraph("AI-Assisted Diagnostic Analysis & Triage Recommendations", section_heading))
+    story.append(Paragraph("Rule-Based Pattern-Match Summary", section_heading))
     
     pred_headers = [
-        Paragraph("<b>Estimated Condition</b>", table_header_style),
-        Paragraph("<b>Match Confidence</b>", table_header_style),
-        Paragraph("<b>Clinical Triage Priority</b>", table_header_style)
+        Paragraph("<b>Matched Knowledge-Base Entry</b>", table_header_style),
+        Paragraph("<b>Normalized Match Score</b>", table_header_style),
+        Paragraph("<b>Suggested Follow-Up</b>", table_header_style)
     ]
     
     # Calculate triage priority text
@@ -221,10 +220,9 @@ def generate_assessment_pdf(prediction: models.Prediction, user: models.User) ->
     # Clinical Advisory
     story.append(Spacer(1, 15))
     advisory_text = (
-        "<b>Clinical Advisory:</b> This diagnostic assessment report is compiled by the MedAssist AI Decision Support System "
-        "to assist the user in identifying potential health risks. The intelligence data presented is for informational and educational "
-        "guidance and does not constitute a legal medical diagnosis, prescription, or clinical recommendation. "
-        "MedAssist AI is designed to support, not replace, the patient-doctor relationship. If you are experiencing chest discomfort, "
+        "<b>Important:</b> This educational summary is generated from a small rule-based symptom knowledge base. "
+        "The displayed match score is not a probability, diagnosis, prescription, or clinical recommendation. "
+        "It cannot replace a qualified clinician. If you are experiencing chest discomfort, "
         "severe shortness of breath, sudden facial/limb weakness, or other critical warning signs, please seek immediate emergency care."
     )
     story.append(Paragraph(advisory_text, advisory_style))

@@ -27,6 +27,18 @@ backend/.venv/
 .env.development
 .env.test
 .env.production
+!.env.example
+backend/.env
+backend/.env.*
+!backend/.env.example
+
+# Python tooling and test output
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+coverage.xml
+htmlcov/
 
 # Database & local data
 *.db

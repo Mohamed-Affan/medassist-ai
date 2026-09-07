@@ -38,18 +38,18 @@ export default function LandingPage() {
 
         <div className="inline-flex items-center gap-2 px-4 py-2 bg-primary/10 border border-primary/20 text-primary font-sans font-semibold text-sm rounded-full mb-8 shadow-sm">
           <Shield className="w-4 h-4" />
-          AI-Powered Intelligent Healthcare support
+          Educational health-support prototype
         </div>
 
         <h1 className="font-display font-extrabold text-4xl sm:text-6xl md:text-7xl leading-tight tracking-tight text-slate-900 max-w-4xl mb-6">
-          AI-Powered Healthcare for{' '}
+          Guided Health Support for{' '}
           <span className="bg-clip-text text-transparent bg-linear-to-r from-primary to-teal">
             Smarter Decisions
           </span>
         </h1>
 
         <p className="font-sans text-lg md:text-xl text-slate-600 max-w-2xl mb-10 leading-relaxed">
-          Understand symptoms, assess early disease risks, analyze medical images, and receive personalized preventive recommendations with a secure, intelligent health companion.
+          Explore symptom patterns, preventive guidance, and a simulated image-analysis workflow in an educational health-support prototype.
         </p>
 
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
@@ -71,7 +71,7 @@ export default function LandingPage() {
               Comprehensive Health Intelligence
             </h2>
             <p className="font-sans text-slate-600 max-w-2xl mx-auto">
-              Our intelligent engine brings together machine learning, computer vision, and expert knowledge to deliver immediate guidance.
+              The current prototype combines an explainable rule set, fixed health-content patterns, and a simulated image-analysis workflow.
             </p>
           </div>
 
@@ -81,9 +81,9 @@ export default function LandingPage() {
               <div className="w-12 h-12 rounded-xl bg-primary/10 text-primary flex items-center justify-center mb-6">
                 <Activity className="w-7 h-7" />
               </div>
-              <h3 className="font-display font-bold text-xl text-slate-900 mb-3">AI Symptom Assessment</h3>
+              <h3 className="font-display font-bold text-xl text-slate-900 mb-3">Symptom Pattern Assessment</h3>
               <p className="font-sans text-slate-600 leading-relaxed mb-4">
-                Input your symptoms, check pain scale, log durations, and let our risk engine compute likely conditions with detailed severity and confidence metrics.
+                Record symptoms, pain scale, duration, and basic context. The rule-based engine returns matching knowledge-base entries and explains the matched indicators.
               </p>
               <Link to="/register" className="inline-flex items-center gap-1 font-sans font-semibold text-primary hover:text-primary/80 transition-colors">
                 Try Symptom Checker <ChevronRight className="w-4 h-4" />
@@ -95,9 +95,9 @@ export default function LandingPage() {
               <div className="w-12 h-12 rounded-xl bg-teal/10 text-teal flex items-center justify-center mb-6">
                 <Camera className="w-7 h-7" />
               </div>
-              <h3 className="font-display font-bold text-xl text-slate-900 mb-3">Medical Image Scanner</h3>
+              <h3 className="font-display font-bold text-xl text-slate-900 mb-3">Simulated Image Scanner</h3>
               <p className="font-sans text-slate-600 leading-relaxed mb-4">
-                Upload images of skin, nails, tongue, or rashes. Our CNN models perform visual intelligence and highlight regions of concern with diagnostic confidence.
+                Upload a skin, nail, or tongue image to explore the prototype scanner UI. It returns deterministic, predefined sample output; it does not interpret medical images.
               </p>
               <Link to="/register" className="inline-flex items-center gap-1 font-sans font-semibold text-teal hover:text-teal/80 transition-colors">
                 Try Image Scanner <ChevronRight className="w-4 h-4" />
@@ -109,9 +109,9 @@ export default function LandingPage() {
               <div className="w-12 h-12 rounded-xl bg-indigo/10 text-indigo-600 flex items-center justify-center mb-6">
                 <MessageSquare className="w-7 h-7" />
               </div>
-              <h3 className="font-display font-bold text-xl text-slate-900 mb-3">AI Health Assistant</h3>
+              <h3 className="font-display font-bold text-xl text-slate-900 mb-3">Health Information Assistant</h3>
               <p className="font-sans text-slate-600 leading-relaxed mb-4">
-                A chatbot equipped with healthcare expertise. Ask general questions, learn about medications, get dietary support, and understand health recommendations.
+                Ask common health-information questions and receive responses selected from a fixed, pattern-based content set.
               </p>
               <Link to="/register" className="inline-flex items-center gap-1 font-sans font-semibold text-indigo-600 hover:text-indigo-500 transition-colors">
                 Chat with Assistant <ChevronRight className="w-4 h-4" />
@@ -140,13 +140,13 @@ export default function LandingPage() {
           </div>
           <div className="flex flex-col items-center">
             <div className="w-10 h-10 rounded-full bg-teal text-white flex items-center justify-center font-display font-bold mb-4">2</div>
-            <h4 className="font-display font-bold text-lg text-slate-900 mb-2">Deep AI Analysis</h4>
-            <p className="font-sans text-slate-500 text-sm">ML and CNN pipelines process your inputs.</p>
+            <h4 className="font-display font-bold text-lg text-slate-900 mb-2">Rule-Based Matching</h4>
+            <p className="font-sans text-slate-500 text-sm">Known symptom patterns and emergency flags are evaluated.</p>
           </div>
           <div className="flex flex-col items-center">
             <div className="w-10 h-10 rounded-full bg-indigo-600 text-white flex items-center justify-center font-display font-bold mb-4">3</div>
-            <h4 className="font-display font-bold text-lg text-slate-900 mb-2">Risk Evaluation</h4>
-            <p className="font-sans text-slate-500 text-sm">Determine severity metrics and confidence indicators.</p>
+            <h4 className="font-display font-bold text-lg text-slate-900 mb-2">Guidance Summary</h4>
+            <p className="font-sans text-slate-500 text-sm">Review matched patterns, precautions, and when to seek care.</p>
           </div>
           <div className="flex flex-col items-center">
             <div className="w-10 h-10 rounded-full bg-purple-600 text-white flex items-center justify-center font-display font-bold mb-4">4</div>
@@ -165,16 +165,16 @@ export default function LandingPage() {
       <section id="stats" className="px-6 py-12 bg-linear-to-r from-primary to-teal text-white">
         <div className="max-w-7xl mx-auto grid md:grid-cols-4 gap-8 text-center py-8">
           <div>
-            <div className="font-display font-extrabold text-5xl mb-2">150+</div>
-            <div className="font-sans text-slate-100 font-medium">Diseases Scanned</div>
+            <div className="font-display font-extrabold text-5xl mb-2">9</div>
+            <div className="font-sans text-slate-100 font-medium">Knowledge-base conditions</div>
           </div>
           <div>
-            <div className="font-display font-extrabold text-5xl mb-2">500+</div>
-            <div className="font-sans text-slate-100 font-medium">Symptoms Cataloged</div>
+            <div className="font-display font-extrabold text-5xl mb-2">30+</div>
+            <div className="font-sans text-slate-100 font-medium">Unique symptom labels</div>
           </div>
           <div>
-            <div className="font-display font-extrabold text-5xl mb-2">6+</div>
-            <div className="font-sans text-slate-100 font-medium">Image Scan Categories</div>
+            <div className="font-display font-extrabold text-5xl mb-2">3</div>
+            <div className="font-sans text-slate-100 font-medium">Prototype scan categories</div>
           </div>
           <div>
             <div className="font-display font-extrabold text-5xl mb-2">&lt; 5s</div>
@@ -204,7 +204,7 @@ export default function LandingPage() {
               How secure is my health data?
             </h4>
             <p className="font-sans text-slate-600 leading-relaxed">
-              Your security is our primary focus. We encrypt user records, protect database links, hash credentials, and require secure token-based logins for all sessions.
+              Passwords are hashed and the prototype uses token-based sign-in. Local SQLite data and browser-stored tokens are not production-grade protection; do not use real medical information.
             </p>
           </div>
         </div>

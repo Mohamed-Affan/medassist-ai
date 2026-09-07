@@ -23,8 +23,8 @@ def submit_assessment(
     current_user: models.User = Depends(get_current_user)
 ):
     """
-    Processes symptoms through the ML diagnostic pipeline, saves the results to the DB,
-    and returns a normalized diagnosis, emergency checks, and preventive care action items.
+    Matches symptoms against the local rule-based knowledge base, saves the result,
+    and returns educational guidance plus limited emergency flags.
     """
     # 1. Run prediction pipeline
     biometrics = {
